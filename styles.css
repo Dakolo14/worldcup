@@ -685,6 +685,11 @@ a {
   object-fit: cover;
 }
 
+.modal__image--placeholder {
+  background: var(--placeholder-bg);
+  border: 1px dashed var(--placeholder-border);
+}
+
 .modal__image-placeholder {
   position: absolute;
   inset: 0;
@@ -692,16 +697,22 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--placeholder-text);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: var(--placeholder-bg);
-  border: 1px dashed var(--placeholder-border);
+  text-align: center;
+  line-height: 1.4;
+  padding: 12px;
 }
 
 .modal__image img[src] ~ .modal__image-placeholder {
   display: none;
+}
+
+.modal__image:has(img[src]) {
+  border: none;
+  background: var(--bg-card);
 }
 
 .modal__desc {
